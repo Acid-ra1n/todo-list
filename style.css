@@ -1,0 +1,224 @@
+body, html {
+  margin: 0;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+#myCanvas {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+/* Task */
+div.content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Task date and time*/
+div.content span {
+  background-color: rgb(0, 255, 255);
+}
+
+/* div containing all todo list elements*/
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Error Messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none; 
+}
+
+li.expanded span.error-message {
+  display: block;
+}
+span.error-message {
+  display: none;
+}
+
+/* Main input at top of page */
+#mainInput {
+  display: flex; 
+  flex-wrap: nowrap;
+}
+
+/* All inputs*/
+input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  margin-right: 5px;
+  flex-grow: 1; 
+  min-width: 80px;
+}
+
+/* Add task button*/
+#addTask {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 35px;
+  flex-shrink: 0;
+}
+
+/* Edit/Delete Buttons */
+li button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 35px;
+  width: 60px;
+  margin-right: 5px;
+}
+
+button:hover, #addTask:hover {
+  background-color: #45a049;
+}
+
+/* List holding all tasks*/
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual Task Blocks */
+li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background-color: #ddd;
+  border-radius: 5px;
+  display: flex;
+  transition: padding-bottom 0.3s ease; 
+  overflow: hidden; 
+  padding-bottom: 10px; 
+  position: relative; 
+  align-items: center;
+}
+
+li:hover {
+  background-color: #ccc;
+}
+
+/* Individual Task Content Written */
+li div {
+  display: inline-block; 
+  min-width: 70px;
+  max-height: 50px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  flex: 1; 
+  margin: 0 5px; 
+  padding: 5px; 
+  background-color: yellow; 
+}
+
+/* Task Expanded State */
+li .input {
+  display: none; 
+  flex-grow: 1; 
+  min-width: 70px;
+}
+
+li.expanded input {
+  display: block; 
+}
+
+li.expanded {
+  padding-bottom: 250px;
+}
+
+li.expanded li {
+  width: 50px;
+}
+
+li.expanded div {
+  display: none; 
+}
+
+/* Set Date Button - Leads to Date, Time, Notification */
+.set-date-button {
+  display: none; 
+  margin-left: 22px;
+  width: 80px;
+}
+
+/* Div that contains date and time inputs, and notification button */
+.dateTimeNotif {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: visible;
+  max-height: none;
+}
+/* Set date and time button and container holding date/time inputs */
+li.expanded .set-date-button, li.expanded .dateTimeNotif {
+  display: block; 
+  position: absolute; 
+  top: 50px;
+}
+
+/* Task expanded state*/
+li.expanded p {
+  display: block; 
+  margin: 0;
+}
+
+li p, .date-input, .dateTimeNotif {
+  display: none;
+}
+
+/* "date: " and "time: " text */
+div.dateTimeNotif p {
+  margin-top: 11px;
+}
+
+/* Notification button*/
+#setNotification {
+  width: 80px;
+}
+
+/* Setting Date & Time */ 
+.date-input, .time-input {
+  display: none;
+  margin-top: 5px;
+  padding: 5px;
+  width: calc(100% - 10px); 
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.dateInput, .time-input {
+  width: 100%;
+}
+
+/* Delete All Items */
+#minusButton {
+  padding: 5px 10px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 30px;
+}
+
+#minusButton:hover {
+  background-color: #cc4c35; 
+}
